@@ -1,0 +1,27 @@
+manifest_version: 2
+name: 'VoiceText TTS'
+version: '0.1.0'
+
+background:
+  scripts:
+    - 'script/background.js'
+  persistend: false"
+  
+options_ui:
+  page: "options.html"
+  chrome_style: true
+
+permissions:
+  - 'storage'
+  - 'ttsEngine'
+  - 'https://api.voicetext.jp/'
+
+tts_engine:
+  voices:
+    - voice_name: 'VoiceText Hikari'
+      lang: 'ja-JP'
+      gender: 'female'
+      event_types:
+        - 'start'
+        - 'end'
+      remote: true
